@@ -7,25 +7,48 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!--JavaScripts-->
         <script src="pagineta.js"></script>
+        <!--Styles-->
+        <style type="text/css">
+            @import url('styles.css');
+        </style>
     </head>
     <body>
-        <div>
-            <h2 class="comment-reply-title">Formulario de gestión de empleados:</h2>
-            <form action="/action_page.php">
-                <p>
-                    <!-- <input type="text" placeholder="EmpleatId *" id="eId" name="eId" value="0" /><br /> -->
-                    <input type="text" placeholder="EmpleatId *" id="eId" name="eId" /><br />
-                    <input type="text" placeholder="Dni *" id="eDni" name="eDni" size="20" /><br />
-                    <input type="text" placeholder="Nom *" id="eNom" name="eNom" /><br />
-                    <input type="text" placeholder="Cognoms *" id="eCognoms" name="eCognoms" /><br />
-                    <input type="text" placeholder="Càrrec *" id="eCarrec" name="eCarrec" /><br />
-                    <input type="email" placeholder="Correu *" id="eCorreu" name="eCorreu" /><br />
-                    <!-- <input type="number" placeholder="Sou *" id="eSou" step="500" min="0" value="20000" name="eSou" /><br /> -->
-                    <input type="number" placeholder="Sou *" id="eSou" step="500" min="0" name="eSou" /><br />
-                    <br />
-                    <button onclick="addWorkers()">Guardar</button>
-                    <input type="reset">
-                </p>
+        <div class="section">
+            <h2 class="title">Formulari de gestió d'empleats:</h2>
+            <form id="commentform" class="comment-form" action="/action_page.php">
+                <div class="comment-form-empleatid">
+                    <input type="text" placeholder="EmpleatId *" id="eId" name="eId" value="" size="30" maxlength="245" />
+                    <label for="eId" data-help="Si és alta indicar 0">EmpleatId</label>
+                </div>
+                <div class="comment-form-dni">
+                    <input type="text" placeholder="Dni *" id="eDni" name="eDni" value=""  size="30" maxlength="245" required />
+                    <label for="eDni" data-help="Introdueixi el DNI">DNI</label>
+                </div>
+                <div class="comment-form-nom">
+                    <input type="text" placeholder="Nom *" id="eNom" name="eNom" value=""  size="30" maxlength="245" required />
+                    <label for="eNom" data-help="Introdueixi el Nom">Nom</label>
+                </div>
+                <div class="comment-form-cognom">
+                    <input type="text" placeholder="Cognoms *" id="eCognoms" name="eCognoms" value=""  size="30" maxlength="245" required />
+                    <label for="eCognoms" data-help="Introdueixi els Cognoms">Cognoms</label>
+                </div>
+                <div class="comment-form-carrec">
+                    <input type="text" placeholder="Càrrec *" id="eCarrec" name="eCarrec" value=""  size="30" maxlength="245" required />
+                    <label for="eCarrec" data-help="Introdueixi el lloc de treball">Càrrec</label>
+                </div>
+                <div class="comment-form-correu">
+                    <input type="email" placeholder="Correu *" id="eCorreu" name="eCorreu" value=""  size="30" maxlength="245" required />
+                    <label for="eCorreu" data-help="Introdueixi el correu electrònic">Correu</label>
+                </div>
+                <div class="comment-form-sou">    
+                    <input type="number" placeholder="Sou *" id="eSou" step="500" min="0" name="eSou" value="" required />
+                    <label for="eSou" data-help="Introdueixi el sou">Sou</label>
+                </div>
+                <br />
+                <div class="form-submmit">
+                    <input name="submit" type="submit" id="submit" class="submit" value="Guardar">
+                    <input name="reset" type="reset" id="reset" class="reset">
+                </div>  
             </form>
         </div>
     </body>
