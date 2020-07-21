@@ -34,7 +34,7 @@ namespace Empleats
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   builder =>
                                   {
-                                      builder.WithOrigins("https://localhost:44305/Empleats");
+                                      builder.WithOrigins("https://localhost:44305/");
                                   });
             });
             //afegit

@@ -37,6 +37,7 @@ h2 {
                     flex-wrap: wrap;
 }
 #commentform > [class^="comment-form"],
+#commentform > .button,
 #commentform > .form-submit {
     position: relative;
     min-height: 1px;
@@ -255,7 +256,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus 
 #commentform input:focus::-moz-placeholder {
     color: transparent;
 }
-#commentform input[type="submit"], #commentform input[type="reset"] {
+#commentform input[type="submit"], #commentform input[type="reset"], #commentform button {
     background-color: transparent;
     border: 1px solid #8BC34A;
     color: #8BC34A;
@@ -267,7 +268,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus 
     /*display: block;*/
     cursor: pointer;
 }
-#commentform input[type="submit"]:hover, #commentform input[type="reset"]:hover {
+#commentform input[type="submit"]:hover, #commentform input[type="reset"]:hover, #commentform button:hover {
     background-color: rgba(139, 195, 74, 0.25);
     border: 1px solid #8BC34A;
 }

@@ -17,7 +17,7 @@
             <h2 class="title">Formulari de gestió d'empleats:</h2>
             <form id="commentform" class="comment-form" action="/action_page.php">
                 <div class="comment-form-empleatid">
-                    <input type="text" placeholder="EmpleatId *" id="eId" name="eId" value="" size="30" maxlength="245" />
+                    <input type="text" placeholder="EmpleatId *" id="eId" name="eId" value="" size="30" maxlength="245" required />
                     <label for="eId" data-help="Si és alta indicar 0">EmpleatId</label>
                 </div>
                 <div class="comment-form-dni">
@@ -46,7 +46,9 @@
                 </div>
                 <br />
                 <div class="form-submmit">
-                    <input name="submit" type="submit" id="submit" class="submit" value="Guardar">
+                    <button onclick="addWorker()">Guardar</button>
+                    <button onclick="getWorker()">Cercar</button>
+                    <button onclick="delWorker()">Eliminar</button>
                     <input name="reset" type="reset" id="reset" class="reset">
                 </div>  
             </form>
