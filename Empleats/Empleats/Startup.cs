@@ -16,29 +16,18 @@ namespace Empleats
 
         public IConfiguration Configuration { get; }
 
-        //afegit pel CORS
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-        //afegit
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //afegit pel CORS
+            services.AddCors();
+            //afegit
+
             services.AddControllers();
 
             services.AddDbContext<EmpleatsContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("EmpleatsContext")));
-            
-            //afegit pel CORS
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("https://localhost:44305/");
-                                  });
-            });
-            //afegit
-        }
+         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -53,7 +42,10 @@ namespace Empleats
             app.UseRouting();
 
             //afegit pel CORS
-            app.UseCors(MyAllowSpecificOrigins);
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
             //afegit
 
             app.UseAuthorization();
