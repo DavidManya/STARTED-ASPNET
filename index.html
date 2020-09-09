@@ -15,7 +15,7 @@
     <body>
         <div class="section">
             <h2 class="title">Formulari de gestió d'empleats:</h2>
-            <form id="commentform" class="comment-form" action="/action_page.php">
+            <form id="commentform" class="comment-form">
                 <div class="comment-form-empleatid">
                     <input type="text" placeholder="EmpleatId *" id="eId" name="eId" value="" size="30" maxlength="245" required />
                     <label for="eId" data-help="Si és alta indicar 0">EmpleatId</label>
@@ -46,10 +46,10 @@
                 </div>
                 <br />
                 <div class="form-submmit">
-                    <button onclick="addWorker()">Guardar</button>
-                    <button onclick="getWorker()">Cercar</button>
-                    <button onclick="delWorker()">Eliminar</button>
-                    <button onclick="modWorker()">Modificar</button>
+                    <button onclick="addWorker()" formaction="addWorker()">Guardar</button>
+                    <button onclick="getWorker()" formaction="getWorker()">Cercar</button>
+                    <button onclick="delWorker()" formaction="delWorker()">Eliminar</button>
+                    <button onclick="modWorker()" formaction="modWorker()">Modificar</button>
                     <input name="reset" type="reset" id="reset" class="reset">
                 </div>  
             </form>
